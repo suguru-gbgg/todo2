@@ -3,6 +3,7 @@
 @section('content')
 
 <input type="text" class="text">
-<button type="submit" calss="addtext" value="task">追加</button>
+<button type="submit" class="addtext">追加</button>
+<ul class="ltext"></ul>
 
 @endsection
