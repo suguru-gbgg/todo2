@@ -4,6 +4,10 @@
 
 <input type="text" class="text">
 <button type="submit" class="addtext">追加</button>
-<ul class="ltext"></ul>
+<form action="MainController" method="post">
+@csrf
+    <ul class="ultext"></ul>
+    <button type="submit">保存</button>
+</form>
 
 @endsection
