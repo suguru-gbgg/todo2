@@ -10,6 +10,9 @@ use App\Models\Text;
 class MainController extends Controller
 {
     function insert(Request $request){
+      
+      // Text::where('user_id', \Auth::user()->id)->delete();
+
       for($i=0; $i<=$request->list; $i++){
         $a = "htext".$i;
         $task = new Text();
@@ -19,13 +22,12 @@ class MainController extends Controller
 
         $task->save();
       }
+      $texts = Text::where('user_id', Auth::user()->id)->get();
+      return view('index',compact('texts'));
     }
-}
 
-class MainController extends Controller
-{
-  function find(){
-    $text = Text::find(Auth::user()->id);
-    echo $text->text;
-  }
+    function find(){
+      $texts = Text::where('user_id', Auth::user()->id)->get();
+      return view('index',compact('texts'));
+    }
 }
