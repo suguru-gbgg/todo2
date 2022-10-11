@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     function insert(Request $request){
       
-      // Text::where('user_id', \Auth::user()->id)->delete();
+      Text::where('user_id', \Auth::user()->id)->delete();
 
       for($i=0; $i<=$request->list; $i++){
         $a = "htext".$i;
